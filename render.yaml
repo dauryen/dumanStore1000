@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: duman-catalog
+    env: node
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    disk:
+      name: duman-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: DUMAN_DATA_DIR
+        value: /var/data
+      - key: DUMAN_ADMIN_PASSWORD
+        sync: false

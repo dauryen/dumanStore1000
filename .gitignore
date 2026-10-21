@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+vite.stdout.log
+vite.stderr.log
+.tmp-server-*.log
+.env.local
+.env.*.local
